@@ -35,7 +35,7 @@ mu_MSFT_daily = daily_returns_MSFT.mean()
 mu_GSPC_daily = daily_returns_GSPC.mean()
 
 # Take negative sign of VaR (VaR is typically negative value) to obtain positive magnitude of loss
-# This is in better alignment with the paper and allows for conditioning on -VaR when computing mixed CVaR beta
+# This allows for conditioning on -VaR when computing mixed CVaR beta
 var_alpha1 = -np.quantile(daily_returns_GSPC, 1 - alpha1)
 var_alpha2 = -np.quantile(daily_returns_GSPC, 1 - alpha2)
 
